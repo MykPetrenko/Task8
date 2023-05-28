@@ -1,0 +1,29 @@
+package com.example.task7
+
+class LocalDataSource(private val catDataDao: CatDataDao) {
+
+  fun insertCatData(catData: CatDataEntity) {
+    catDataDao.insertCatData(catData)
+  }
+
+  fun clearBreedsTable() {
+    catDataDao.clearBreedsTable()
+  }
+
+  fun clearBreedsRecord(breedName: String) {
+    catDataDao.clearBreedsRecord(breedName)
+  }
+
+  fun retrieveCatData(): List<CatDataEntity> {
+    return catDataDao.retrieveCatData()
+  }
+
+  fun retrieveInfoByBreedName(breedName: String): CatDataEntity {
+    return catDataDao.retrieveInfoByBreedName(breedName)
+  }
+
+  fun doesBreedExist(breedName: String): Boolean {
+    return catDataDao.doesBreedExist(breedName)
+  }
+}
+
